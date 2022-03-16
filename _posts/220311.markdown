@@ -1,0 +1,51 @@
+# Computer Algorithm Week2 수업 내용 정리
+
+> ## **Algorithm**이란?
+- Input에서 Output으로 가기 위한 일련의 순서 과정으로 어떠한 문제를 해결하기 위한 명령들의 집합으로 볼 수 있다. - 크게 **Design(설계)** 과정과 **Analysis(분석)** 과정이 있다.
+
+ > ## **Design**
+ - Divide and conquer(분할 정복 알고리즘)
+ - Greedy(그리디 알고리즘)
+ - Dynamic programming(동적 계획 알고리즘)
+ - Backtracking(백트래킹 알고리즘)
+ - Approximation(근사 알고리즘)
+
+ > ### **Analysis**
+ - Space complexity(공간 복잡도)
+ - Time complexity(시간 복잡도)
+
+___
+
+이번에는 **Algorithm**의 **Analysis** 과정 중 일반적으로 알고리즘 효율성을 비교할 때 주로 사용되는 **시간복잡도(Time complexity)**에 대해 정리해보았다. 
+
+> ### **시간 복잡도(Time complexity)**
+- **시간복잡도(Time complexity)**는 Input 크기에 대한 함수로 표기하는데, 이 함수는 다항식이라 단순한 함수로 표기하기 위해 **점근적 표기법(Asymptotic notation)**을 사  용한다. 
+
+> ### **점근적 표기법(Time complexity)**
+- 점근적 표기법은 Input의 크기 n이 무한대로 커질 때 그 복잡도를 간단하게 표현하기 위한 표기법이다.
+- 점근적 표기법의 종류로 *Big-O notation, Big-Omega notation, Theta notation* 가 있다.
+- 그 중 Big-O 표기법에 대해 정리해보았다.
+
+- **Big-O 표기법은 Algorithm**의 시간 복잡도를 나타내기 위한 표기법으로, *O(f(n))* or *O(g(n))* or *O(n)* 으로 표기한다.
+
+자주 사용되는 Big-O 표기법을 소개한다. 자주 사용하는 **5가지**가 있다.
+|종류|특징|
+|:--:|:--:|
+|*O(log<sub>k</sub>n)*|로그 시간 복잡도로 k값과 상관없이 n의 log에 비례하여 증가한다.|
+|*O(1)*|상수 시간 복잡도로 Input이 증가해도 항상 일정한 시간이 걸린다.|
+|*O(n)*|선형 시간 복잡도로 Input의 크기가 증가할 수록 더 많은 시간이 걸린다.|
+|*nlog<sub>k</sub>n*|로그 시간 복잡도로 밑의 값은 상관없이 n과 n의 log에 비례하여 증가한다.|
+|n<sup>k</sup>|다항 시간 복잡도로 Input 크기의 k제곱하여 비례 증가한다.|
+|2<sup>n</sup>|지수 시간 복잡도로 2의 n제곱에 비례하여 증가한다.|
+
+> **Big-O 표기법으로 나타낸 시간 복잡도 비교 예시**
+
+ *O(1) < O(log n) < O(n) < O(nlogn)< O(n<sup>2</sup>) < O(2<sup>n</sup>) < O(n!)*
+ 
+ **왼쪽**에 위치할 수록 시간복잡도가 *낮고*, **오른쪽**에 위치할 수록 시간복잡도가 *높다*.
+
+ ![image description](https://2.bp.blogspot.com/-lwiXSsJzeVc/WGJrqpNp_QI/AAAAAAAAO10/uBdjjqCnzXsw_MQ_TALjZieaPSi2dZu_gCLcB/s1600/computability-tractable-intractable-and-noncomputable-function-9-638.jpeg)
+  
+ *fig) 시간 복잡도에 따른 그래프*
+___
+
