@@ -47,5 +47,6 @@ ___
  ![image description](https://2.bp.blogspot.com/-lwiXSsJzeVc/WGJrqpNp_QI/AAAAAAAAO10/uBdjjqCnzXsw_MQ_TALjZieaPSi2dZu_gCLcB/s1600/computability-tractable-intractable-and-noncomputable-function-9-638.jpeg)
   
  *fig) 시간 복잡도에 따른 그래프*
+ 
 ___
 
