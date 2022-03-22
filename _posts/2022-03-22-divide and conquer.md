@@ -12,7 +12,8 @@
 - 시간복잡도는 , 공간복잡도는 
 
 **합병 정렬 알고리즘(분할 정복 기반)**
-	*MergeSort(A, p, q)
+	
+    MergeSort(A, p, q)
 	Input: A[p ] ~A[q]
 	Output: Sorted A[p]~A[q]
 	
@@ -21,7 +22,7 @@
 	  MergeSort(A, p, k)
 	  MergeSort(A, k+1, q)
 	  A[p] ~ A[k]와 A[k+1]~A[q]를 합병한다.
-	}*
+	}
 
 **퀵 정렬(Quick Sort)**
 - 피봇(pivot)이라 일컫는 배열의 원소를 기준으로 피봇보다 작은 숫자들을 왼쪽으로, 피봇보다 큰 숫자들은 오른편에 위치하도록 분할하고 피봇을 그 사이에 놓는다.
@@ -29,7 +30,8 @@
 - 평균의 시간복잡도는 , 최악 경우의 시간복잡도는, 최선 경우의 시간복잡도는 
 
 **퀵 정렬 알고리즘**
-	QuickSort(A, left, right)
+	
+    QuickSort(A, left, right)
 	Input: String A[left]~A[right]
 	Output: Sorted String A[left]~A[right]
 	
@@ -46,10 +48,10 @@
 - 평균 경우의 시간복잡도는 
 
 **선택 문제 알고리즘**
-	Selection(A, left, right, k)
+	
+    Selection(A, left, right, k)
 	Input: A[left]~A[right]와 k, 단, 1≤k≤|A|, |A|=right-left+1
 	Output: A[left]~A[right]에서 k번째 작은 요소
-	
 	pivot을 A[left]~A[right]에서 랜덤하게 선택한다.
 	pivot과 A[left]의 자리를 바꾸고, pivot과 배열의 각 원소를 비교한다.
 	pivot보다 작으면 A[left]~A[pivot-1]로, 크면 A[p+1]~A[right] 위치로 옮긴다.
@@ -68,7 +70,8 @@
 - 향상된 알고리즘의 시간복잡도는 
 
 **최근접 점의 쌍을 찾는 알고리즘**
-	ClosestPair(S)
+	
+    ClosestPair(S)
 	Input: x-좌표의 오름차순으로 정렬된 배열 S에는 I개의 점[단, 각 점은 (x, y)로 표	시)]이 주어진다.
 	Output: S에 있는 점들 중 최근접 점의 쌍의 거리
 
