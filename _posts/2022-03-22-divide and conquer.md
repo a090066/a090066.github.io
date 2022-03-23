@@ -58,7 +58,7 @@
 ![image](https://blog.kakaocdn.net/dn/bvk8dw/btqwVhxq7vQ/F6wCsUPw77h1fGBej78S8k/img.png)
 <br/>
 
-**선택 문제(정렬) (Selection)**
+**선택 문제 (Selection)**
 - k번째 작은 수를 찾는 문제로서, 입력에서 퀵 정렬에서와 같이 피봇을 선택하여 피봇보다 작은 부분과 큰 부분으로 분할한 후에 k번째 작은 수가 들어있는 부분을 순환적으로 탐색한다.
 - 평균 경우의 시간복잡도는 *O(n)*
 
@@ -91,7 +91,7 @@
 **최근접 점의 쌍을 찾는 알고리즘**
 	
     ClosestPair(S)
-	Input: x-좌표의 오름차순으로 정렬된 배열 S에는 I개의 점[단, 각 점은 (x, y)로 표	시)]이 주어진다.
+	Input: x-좌표의 오름차순으로 정렬된 배열 S에는 I개의 점[단, 각 점은 (x, y)로 표시)]이 주어진다.
 	Output: S에 있는 점들 중 최근접 점의 쌍의 거리
 
 	if(i ≤ 3)
@@ -105,3 +105,73 @@
 단, *dist()*는 두 점 사이의 거리이다. <br/>
 return *(CP<sub>L</sub>, CP<sub>C</sub>, CP<sub>R</sub>* 중에서 거리가 가장 짧은 쌍)
 
+<br/>
+
+## 출처
+* [Merge Sort](https://blog.kakaocdn.net/dn/I4Eea/btqwWoPUJTM/7PgoOu3VrplmeIhcR0vnNK/img.png)
+* [Quick Sort](https://blog.kakaocdn.net/dn/bvk8dw/btqwVhxq7vQ/F6wCsUPw77h1fGBej78S8k/img.png)
+* 양성봉 著, **알기쉬운 알고리즘**
+<br/>
+
+___ 
+<br/>
+
+**알기 쉬운 알고리즘** 교재 내에 *분할 정복 알고리즘* 파트 중 퀵 정렬 알고리즘의 예시를 하나 살펴보고자 한다.
+<br/>
+
+### Quick Sort Algorithm 구현 (Java)
+> #### Q) 다음의 숫자가 주어졌을 때 퀵정렬을 이용하여 오름차순으로 정렬하라.
+> #### 6, 9, 21, 81, 95, 73, 29, 20, 15, 4, 30, 1, 90, 718, 385, 407, 913
+
+<br/>
+
+```java
+public class QuickSort {
+    private static void quickSort(int[] arr,int start, int end) {
+        int part=partition(arr,start,end);
+        if(start<part-1) quickSort(arr,start,part-1);
+        if(end>part) quickSort(arr,part,end);
+    }
+
+    private static int partition(int[] arr,int start,int end) {
+        int pivot=arr[(start+end)/2];
+        while(start<=end) {
+            while(arr[start]<pivot) start++;
+            while(arr[end]>pivot) end--;
+            if(start<=end) {
+                swap(arr,start,end);
+                start++;
+                end--;
+            }
+        }
+        return start;
+    }
+
+    private static void swap(int[] arr,int start,int end) {
+        int tmp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=tmp;
+        return;
+    }
+
+
+    public static void main(String[] args) {
+        int[] arr= {6, 9, 21, 81, 95, 73, 29, 20, 15, 4, 30, 1, 90, 718, 385, 407, 913};
+        quickSort(arr,0,arr.length-1);
+        for(int i=0;i<arr.length;i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+```
+<br/>
+
+
+## 위 Algorithm의 Output
+- ![Output](https://drive.google.com/file/d/1Ohz7T7bXrESW2hDQ6JPwckKqQfbcTLTP/view?usp=sharing)
+<br/>
+
+## 출처
+* ![Youtube](https://www.youtube.com/watch?v=7BDzle2n47c)
+* 양성봉 著, **알기쉬운 알고리즘**
+<br/>
