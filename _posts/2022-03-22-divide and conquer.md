@@ -10,13 +10,14 @@
 <br/>
 <br/>
 
-*합병정렬(Merge Sort)
+### 합병정렬(Merge Sort)
 - 입력이 2개의 부분문제로 분할되고 부분문제의 크기가 1/2로 감소하는 분할 정복 알고리즘
 - n개의 숫자들을 n/2개씩 2개의 부분 문제로 분할하고, 각각의 부분문제를 순환적으로 합병 정렬한 후, 2개의 정렬된 부분을 합병하여 정렬한다.
 - 시간복잡도는 *O(nlogn)*, 공간복잡도는 *O(n)*
 
 **합병 정렬 알고리즘(분할 정복 기반)**
 	
+```java
     MergeSort(A, p, q)
 	Input: A[p] ~A[q]
 	Output: Sorted A[p]~A[q]
@@ -27,43 +28,48 @@
 	  MergeSort(A, k+1, q)
 	  A[p] ~ A[k]와 A[k+1]~A[q]를 합병한다.
 	}
-
+```
 <br/>
 
 ![image](https://blog.kakaocdn.net/dn/I4Eea/btqwWoPUJTM/7PgoOu3VrplmeIhcR0vnNK/img.png)
+<br/>
 *fig) 병합 정렬*
 
 <br/>
 
-**퀵 정렬(Quick Sort)** <br/>
+### 퀵 정렬(Quick Sort) <br/>
 - 피봇(pivot)이라 일컫는 배열의 원소를 기준으로 피봇보다 작은 숫자들을 왼쪽으로, 피봇보다 큰 숫자들은 오른편에 위치하도록 분할하고 피봇을 그 사이에 놓는다.
 - 퀵 정렬은 분할된 부분문제들에 대하여 동일한 과정을 순환적으로 수행하여 정렬한다.
 - 평균의 시간복잡도는 *O(nlogn)*, 최악 경우의 시간복잡도는 *O(n<sup>2</sup>)*, 최선 경우의 시간복잡도는 *O(nlogn)*
 
 **퀵 정렬 알고리즘**
-	
+```java
     QuickSort(A, left, right)
 	Input: String A[left]~A[right]
 	Output: Sorted String A[left]~A[right]
 	
 	if(left < right) {
-	  pivot을 String A[left]~A[right] 중에서 선택. 
-	  pivot을 A[left]와 자리를 바꾸고, pivot과 string의 각 원소를 비교하여 작은 숫자	  는 A[left]~A[p-1] 위치에, 큰 숫자들은 A[p+1]~A[right]으로 옮긴다.
+	  pivot을 String A[left]~A[right] 중에서 선택한다.
+	  pivot을 A[left]와 자리를 바꾸고, pivot과 string의 각 원소를 비교하여 작은 숫자는 A[left]~A[p-1] 위치에, 큰 숫자들은 A[p+1]~A[right]으로 옮긴다.
 	  최종적으로 pivot은 A[p]에 둔다.
 	  QuickSort(A, left, p-1)
 	  QuickSort(A, p+1, right)
 	}
+```
+
 <br/>
 
 ![image](https://blog.kakaocdn.net/dn/bvk8dw/btqwVhxq7vQ/F6wCsUPw77h1fGBej78S8k/img.png)
+<br/> *fig)퀵 정렬*
+
 <br/>
 
-**선택 문제 (Selection)**
+### 선택 문제 (Selection)
 - k번째 작은 수를 찾는 문제로서, 입력에서 퀵 정렬에서와 같이 피봇을 선택하여 피봇보다 작은 부분과 큰 부분으로 분할한 후에 k번째 작은 수가 들어있는 부분을 순환적으로 탐색한다.
 - 평균 경우의 시간복잡도는 *O(n)*
 
 **선택 문제 알고리즘**
-	
+```java	
     Selection(A, left, right, k)
 	Input: A[left]~A[right]와 k, 단, 1≤k≤|A|, |A|=right-left+1
 	Output: A[left]~A[right]에서 k번째 작은 요소
@@ -78,25 +84,25 @@
 	  return A[p]
 	else
 	  Selection(A, p+1 right, k-S-1)
-
+```
 <br/> <br/>
 
 
-**최근접 점의 쌍 찾기**
+### 최근접 점의 쌍 찾기
 - n개의 점들을 1/2로 분할하여 각각의 부분문제에서 최근접 점의 쌍을 찾고, 2개의 부분해 중에서 짧은 거리를 가진 점의 쌍을 먼저 찾는다.
 - 그리고 2개의 부분해를 취합할 때, 반드시 중간 영역 안에 있는 점들 중에 최근접 점의 쌍이 있는지도 확인해봐야 한다.
 - 향상된 알고리즘의 시간복잡도는 *O(nlogn)*
 
 
 **최근접 점의 쌍을 찾는 알고리즘**
-	
+```java
     ClosestPair(S)
 	Input: x-좌표의 오름차순으로 정렬된 배열 S에는 I개의 점[단, 각 점은 (x, y)로 표시)]이 주어진다.
 	Output: S에 있는 점들 중 최근접 점의 쌍의 거리
 
 	if(i ≤ 3)
 	  return (2 or 3개의 점들 사이의 최근접 쌍)
-	
+```	
 정렬된 S를 같은 크기의 S를 같은 크기의 S<sub>L</sub>과 S<sub>R</sub>로 분할한다. 단, |S|가 홀수면, |S<sub>L</sub>| = |S<sub>R</sub>|+1 이 되도록 분할한다. <br/>
 *CP<sub>L</sub> = ClosetPair(S<sub>L</sub>)* <br/>
 *CP<sub>R</sub> = ClosetPair(S<sub>R</sub>)* <br/><br/>
@@ -107,10 +113,10 @@ return *(CP<sub>L</sub>, CP<sub>C</sub>, CP<sub>R</sub>* 중에서 거리가 가
 
 <br/>
 
-## 출처
+## Reference
 * [Merge Sort](https://blog.kakaocdn.net/dn/I4Eea/btqwWoPUJTM/7PgoOu3VrplmeIhcR0vnNK/img.png)
 * [Quick Sort](https://blog.kakaocdn.net/dn/bvk8dw/btqwVhxq7vQ/F6wCsUPw77h1fGBej78S8k/img.png)
-* 양성봉 著, **알기쉬운 알고리즘**
+* 양성봉 著, **알기쉬운 알고리즘** 中 *3. 분할정복 알고리즘*
 <br/>
 
 ___ 
@@ -119,8 +125,16 @@ ___
 **알기 쉬운 알고리즘** 교재 내에 *분할 정복 알고리즘* 파트 중 퀵 정렬 알고리즘의 예시를 하나 살펴보고자 한다.
 <br/>
 
+## 퀵 정렬(Quick Sort)?
+> 피봇(Pivot) 선택에 따라 알고리즘의 복잡도가 좌지우지되는 알고리즘으로, 피봇을 기준으로 작은 숫자는 왼쪽으로 큰 숫자는 오른쪽으로 이동해가며 정렬이 이루어진다.
+- 피봇 선택은 자유이나, 통상적으로 가장 왼쪽 index나 중간에 위치한 index를 많이 택한다.
+- 작은 크기보다 큰 크기의 input일 때 더 좋은 성능을 보인다.
+
+<br/>
+
+## Question
 ### Quick Sort Algorithm 구현 (Java)
-> #### Q) 다음의 숫자가 주어졌을 때 퀵정렬을 이용하여 오름차순으로 정렬하라.
+> #### 다음의 숫자가 주어졌을 때 퀵정렬을 이용하여 오름차순으로 정렬하라.
 > #### 6, 9, 21, 81, 95, 73, 29, 20, 15, 4, 30, 1, 90, 718, 385, 407, 913
 
 <br/>
@@ -128,9 +142,9 @@ ___
 ```java
 public class QuickSort {
     private static void quickSort(int[] arr,int start, int end) {
-        int part=partition(arr,start,end);
+        int part=partition(arr, start, end);
         if(start<part-1) quickSort(arr,start,part-1);
-        if(end>part) quickSort(arr,part,end);
+        if(end>part) quickSort(arr, part, end);
     }
 
     private static int partition(int[] arr,int start,int end) {
@@ -148,15 +162,16 @@ public class QuickSort {
     }
 
     private static void swap(int[] arr,int start,int end) {
-        int tmp=arr[start];
-        arr[start]=arr[end];
-        arr[end]=tmp;
+        int temp;
+		temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
         return;
     }
 
 
     public static void main(String[] args) {
-        int[] arr= {6, 9, 21, 81, 95, 73, 29, 20, 15, 4, 30, 1, 90, 718, 385, 407, 913};
+        int[] arr= {6, 95, 73, 20, 15, 30, 1, 90, 718, 407};
         quickSort(arr,0,arr.length-1);
         for(int i=0;i<arr.length;i++) {
             System.out.print(arr[i]+" ");
@@ -168,10 +183,34 @@ public class QuickSort {
 
 
 ## 위 Algorithm의 Output
-- ![Output](https://drive.google.com/file/d/1Ohz7T7bXrESW2hDQ6JPwckKqQfbcTLTP/view?usp=sharing)
+> ![Output](https://postfiles.pstatic.net/MjAyMjAzMjNfMTkg/MDAxNjQ4MDI2ODAyNjQy.lAEZVUG4VQFyT-Qmsqx84BMu71IHMKL1Jvm1CNlVO-0g.ofaE9M4GuYgkz6q-2vSHT6bTEMIdtSfpqC_cl-qnHe8g.PNG.a090066/%ED%80%B5_%EB%B0%B0%EC%97%B4_%EC%B6%9C%EB%A0%A5%EA%B0%92.PNG?type=w773)
+
+> 1 6 15 20 30 73 90 95 407 718 
+
 <br/>
 
-## 출처
-* ![Youtube](https://www.youtube.com/watch?v=7BDzle2n47c)
-* 양성봉 著, **알기쉬운 알고리즘**
+
 <br/>
+
+
+## 퀵 정렬 과정
+> 1. pivot을 정한다. (여기선 6으로 정해보자. arr[0]=6 is pivot)
+> 2. pivot을 기준으로 pivot+1(오른쪽으로 1씩 이동), right-1(왼쪽으로 1씩 이동)하면서 크기 비교를 해가며 위치 이동을 한다.
+> 3. 1차 정렬이 끝났으면, pivot을 재설정 한 뒤, 퀵 정렬을 다시 진행한다.
+> 4. 이 과정을 반복하고 출력값을 확인한다.
+> 5. **1 6 15 20 30 73 90 95 407 718** 
+
+> ※ 이해를 돕는 GIF 파일을 첨부한다.
+![](https://github.com/GimunLee/tech-refrigerator/raw/master/Algorithm/resources/quick-sort-001.gif)
+
+<br/>
+
+___
+## Reference
+* [Youtube - 퀵정렬에 대해 알아보고 자바로 구현하기](https://www.youtube.com/watch?v=7BDzle2n47c)
+* 양성봉 著, **알기쉬운 알고리즘**
+* [Quick Sort](https://gyoogle.dev/blog/algorithm/Quick%20Sort.html)
+<br/>
+
+
+END.
