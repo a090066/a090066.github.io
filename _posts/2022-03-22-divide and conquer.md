@@ -30,7 +30,8 @@
 
 <br/>
 
-![image description] (https://blog.kakaocdn.net/dn/I4Eea/btqwWoPUJTM/7PgoOu3VrplmeIhcR0vnNK/img.png)
+![image](https://blog.kakaocdn.net/dn/I4Eea/btqwWoPUJTM/7PgoOu3VrplmeIhcR0vnNK/img.png)
+*fig) 병합 정렬*
 
 <br/>
 
@@ -52,7 +53,9 @@
 	  QuickSort(A, left, p-1)
 	  QuickSort(A, p+1, right)
 	}
+<br/>
 
+![image](https://blog.kakaocdn.net/dn/bvk8dw/btqwVhxq7vQ/F6wCsUPw77h1fGBej78S8k/img.png)
 <br/>
 
 **선택 문제(정렬) (Selection)**
@@ -76,7 +79,8 @@
 	else
 	  Selection(A, p+1 right, k-S-1)
 
-<br/>
+<br/> <br/>
+
 
 **최근접 점의 쌍 찾기**
 - n개의 점들을 1/2로 분할하여 각각의 부분문제에서 최근접 점의 쌍을 찾고, 2개의 부분해 중에서 짧은 거리를 가진 점의 쌍을 먼저 찾는다.
