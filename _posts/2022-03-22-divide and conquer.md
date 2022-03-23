@@ -90,11 +90,11 @@
 	if(i ≤ 3)
 	  return (2 or 3개의 점들 사이의 최근접 쌍)
 	
-정렬된 S를 같은 크기의 S를 같은 크기의 S<sub>L</sub>과 S<sub>R</sub>로 분할한다. <br/>
-단, |S|가 홀수면, |S<sub>L</sub>| = |S<sub>R</sub>|+1 이 되도록 분할한다. <br/>
-CP<sub>L</sub> = ClosetPair(S<sub>L</sub>) <br/>
-CP<sub>R</sub> = ClosetPair(S<sub>R</sub>) <br/><br/>
-d = min{dist(CP<sub>L</sub>), dist(CP<sub>R</sub>)}일 때, 중간 영역에 속하는 점들 중에서 최근접 점의 	쌍을 찾아서 이를 CP<sub>C</sub>라고 하자. 
-단, dist()는 두 점 사이의 거리임
-return(CP<sub>L</sub>, CP<sub>C</sub>, CP<sub>R</sub> 중에서 거리가 가장 짧은 쌍)
+정렬된 S를 같은 크기의 S를 같은 크기의 S<sub>L</sub>과 S<sub>R</sub>로 분할한다. 단, |S|가 홀수면, |S<sub>L</sub>| = |S<sub>R</sub>|+1 이 되도록 분할한다. <br/>
+*CP<sub>L</sub> = ClosetPair(S<sub>L</sub>)* <br/>
+*CP<sub>R</sub> = ClosetPair(S<sub>R</sub>)* <br/><br/>
+
+*d = min{dist(CP<sub>L</sub>), dist(CP<sub>R</sub>)}* 일 때, 중간 영역에 속하는 점들 중에서 최근접 점의 	쌍을 찾아서 이를 *CP<sub>C</sub>* 라고 하자. 
+단, *dist()*는 두 점 사이의 거리이다. <br/>
+return *(CP<sub>L</sub>, CP<sub>C</sub>, CP<sub>R</sub>* 중에서 거리가 가장 짧은 쌍)
 
