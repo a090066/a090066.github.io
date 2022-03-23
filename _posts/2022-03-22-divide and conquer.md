@@ -209,8 +209,5 @@ ___
 ## Reference
 * [Youtube - 퀵정렬에 대해 알아보고 자바로 구현하기](https://www.youtube.com/watch?v=7BDzle2n47c)
 * 양성봉 著, **알기쉬운 알고리즘**
-* [Quick Sort](https://gyoogle.dev/blog/algorithm/Quick%20Sort.html)
+* [Quick Sort - Image & Notion](https://gyoogle.dev/blog/algorithm/Quick%20Sort.html)
 <br/>
-
-
-END.
