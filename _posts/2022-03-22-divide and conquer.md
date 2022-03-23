@@ -28,6 +28,9 @@
 	  A[p] ~ A[k]와 A[k+1]~A[q]를 합병한다.
 	}
 
+<br/>
+
+![image description] (https://blog.kakaocdn.net/dn/I4Eea/btqwWoPUJTM/7PgoOu3VrplmeIhcR0vnNK/img.png)
 
 <br/>
 
