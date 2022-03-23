@@ -82,7 +82,8 @@ ___
 #### 문제에서 어떠한 정렬을 사용해야 하는지 조건을 제시해주지 않았기에, **합병정렬**을 사용하여 해당 문제를 해결해보자.
 <br/>
 
-> C
+> C <br/>
+
 ```c
 #include <stdio.h>
 
@@ -144,7 +145,8 @@ void merge(int a[], int low, int mid, int hight) {
 ```
 <br/>
 
-> Java
+> Java <br/>
+
 ```java
   import java.util.Scanner;
   ​
