@@ -116,8 +116,71 @@ public class QuickSort {
 #### 문제에서 어떠한 정렬을 사용해야 하는지 조건을 제시해주지 않았기에, **퀵 정렬**을 사용하여 해당 문제를 해결해보자.
 <br/>
 
+```java
+import java.util.Scanner;
+
+public class 2751_QuickSort {
+	public static int partition(int[] array, int left, int right) {
+	    int mid = (left + right) / 2; // 원소의 중앙값을 첫 번째 원소와 교환하기 위함
+	    swap(array, left, mid); // 중앙 값을 첫 번째 요소로 이동
+	 
+	    int pivot = array[left]; // 첫 번째 인덱스가 pivot이 된다.
+        int i = left, j = right;
+	 
+	    while (i < j) { // left < right 즉, 교차하기 전 까지 반복한다.
+	        while (pivot < array[j]) { // j는 오른쪽에서 왼쪽으로 피봇보다 작거나 같은 값을 찾는다.
+	            j--;
+	        }
+	 
+	        while (i < j && pivot >= array[i]) { // i는 왼쪽에서 오른쪽으로 피봇보다 큰 값을 찾는다.
+	            i++;
+	        }
+	        swap(array, i, j); // 찾은 i와 j를 교환
+	    }
+	    // 반복문을 벗어난 경우는 i와 j가 만난경우
+	    // 피봇과 교환
+	    array[left] = array[i]; // 어차피 i와 j가 만나기 때문에 i 또는 j를 사용하면 된다.
+	    array[i] = pivot; // array[left]값을 담아 둔 pivot을 구분점의 요소에 저장
+	    
+	    return i; // 구분점이 되는 인덱스를 반환한다.
+	}
+	 
+	public static void swap(int[] array, int a, int b) {
+	    int temp = array[b];
+	    array[b] = array[a];
+	    array[a] = temp;
+	}
+	 
+	public static void quicksort(int[] array, int left, int right) { 
+	    if (left >= right) 
+	        return;
+	    }
+	 
+	    int p = partition(array, left, right); // 위의 메소드를 통해서 구한 구분점을 저장
+	    quicksort(array, left, p - 1); // left부터 구분점 전까지 다시 한 번 재귀호출
+	    quicksort(array, p + 1, right); // 구분점 다음부터 right까지 다시 한 번 재귀호출
+	}
 
 
+	
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+		 
+		 int n = sc.nextInt();
+		 int arr[] = new int[n];
+		 
+		 for(int i = 0; i < n; i++) {
+			 arr[i] = sc.nextInt();
+		 }
+		 quicksort(arr, 0, n-1);
+	       
+		 for(int i = 0; i < n; i++) {
+			 System.out.println(arr[i]); 
+		 }
+	}
+}
+```
+<br/>
 
 ___
 ## Reference
