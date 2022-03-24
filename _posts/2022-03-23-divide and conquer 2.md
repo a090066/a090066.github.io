@@ -81,7 +81,7 @@ public class QuickSort {
 
 
 ## 위 Algorithm의 Output
-> ![Output](https://postfiles.pstatic.net/MjAyMjAzMjNfMTkg/MDAxNjQ4MDI2ODAyNjQy.lAEZVUG4VQFyT-Qmsqx84BMu71IHMKL1Jvm1CNlVO-0g.ofaE9M4GuYgkz6q-2vSHT6bTEMIdtSfpqC_cl-qnHe8g.PNG.a090066/%ED%80%B5_%EB%B0%B0%EC%97%B4_%EC%B6%9C%EB%A0%A5%EA%B0%92.PNG?type=w773)
+> ![Output](https://github.com/a090066/a090066.github.io/blob/main/Output.png?raw=true)
 
 > 1 6 15 20 30 73 90 95 407 718 
 
@@ -160,8 +160,6 @@ public class 2751_QuickSort {
 	    quicksort(array, left, p - 1); // left부터 구분점 전까지 다시 한 번 재귀호출
 	    quicksort(array, p + 1, right); // 구분점 다음부터 right까지 다시 한 번 재귀호출
 	}
-
-
 	
 	public static void main(String[] args) {
 		 Scanner sc = new Scanner(System.in);
