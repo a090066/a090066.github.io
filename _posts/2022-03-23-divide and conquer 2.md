@@ -74,7 +74,10 @@ ___
 
 <br/>
 
+![image](https://blogfiles.pstatic.net/MjAyMjAzMjRfMjYw/MDAxNjQ4MDg1ODAyMDU4.MHz0StL2igt-HYtQ49vjwEX4inJKcX9WB6CXfh6vgcog.7HcgCM2zakYonnU1nVcI05aTaqX_BM39WP_2BmekSywg.PNG.a090066/%EB%B0%B1%EC%A4%80_2751.PNG)
+
 ## ② 합병 정렬 알고리즘이 적용된 문제 <br/>
+
 > **BaekJoon OnlineJudge** <br/> *No. 2751: 수 정렬하기 2* 
 ### **Question)** N개의 수가 주어졌을 때, 이를 *오름차순*으로 정렬하는 프로그램을 작성하시오. 
 <br/>
