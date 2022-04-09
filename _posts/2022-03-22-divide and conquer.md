@@ -419,3 +419,4 @@ void merge(int a[], int low, int mid, int hight) {
 ## Reference
 - [Youtube - 엔지니어대한민국](https://www.youtube.com/watch?v=QAyl79dCO_k)
 - Image & Notion Ref. - [Github](https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html)
+___
