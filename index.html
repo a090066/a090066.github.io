@@ -1,0 +1,128 @@
+<!doctype html>
+<!--
+    CSP #2
+    Name: 안재일
+    Date: April 25, 2025
+    Class: IAB 6068
+
+    사용자의 기분과 오늘 날씨를 바탕으로 클래식 음악을 추천해주는 사이트.
+
+    기분 - happy, sad, lethargic(무기력함), tired(지친), angry, sleepy
+    날씨 - sunny, cloudy, rainy, thunder, snowy
+    기분을 누르면
+    안 보이던, 6가지 감정들이 뜨고 이 중에 하나를 선택.
+    날씨를 누르면,
+    안 보이던 5가지 날씨들이 뜨고 이 중에 하나 선택.
+    둘 중에 하나에서 선택을 하고, 확인 버튼을 누르면, 그 다음으로 넘어가는 구조.
+    잊지 말자. 둘 중에 뭘 누르냐에 따라, 기분 or 날씨 선태갈 수 있는 것이 떠야됨.
+    그 전에는 아무것도 뜨면 안됨. (전에 했던 whackbug 처럼 구조 참고해보자)
+    아무것도 선택 안 하고 확인 누르면 js에서 alert로 알림 메시지 출력!
+
+    그러면 이제 노래 관련 정보 창이 뜰거임. (이거 하나의 섹션으로 묶기)
+    그 내부에는 음반 사진이나 원작자 사진 박제.
+    그 밑에는, 누구 노래고 무슨 노래인지 적기.
+
+    html에 뭘 더 추가하면 좋을까...? 오늘 날짜랑 시간 나오게 하는 요소?
+
+
+    + 추가로 생각해볼 것.
+
+    기분이나 날씨를 누르면, 안 보이던 창이 생기지?
+    생김과 동시에 기분, 날씨 버튼이 사라지도록 하는건 어떨까? 초기화 버튼으로 해결.
+
+    초기화 관련해서는,,,
+    하단의 다시하기 버튼 하나 만들어서 누르면, 페이지 리로드 되게 하거나 첫 화면으로 돌아가게 하기. reset?
+
+
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Special Classical music!</title>
+    <!-- 클래식 음악을 추천해주므로, LP판 favicon 추가. 출처 하단 명시 -->
+    <link rel="icon" href="images/lp.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+</head>
+<body>
+<header class="header">
+    <h1>오늘은 어떤 클래식 음악으로 힐링해볼까?</h1>
+    <div id="current-time"></div>
+</header>
+
+
+    <div class="description">
+        <p>삶에 지친 여러분들을 위해 맞춤형 클래식 음악을 추천해드립니다.
+        음악을 감상하며 휴식시간을 가져보세요.</p>
+    </div>
+
+    <main class="flex-container">
+        <section id="mode-select">
+            <h2>무엇을 기반으로 추천해드릴까요?</h2>
+            <button id="feeling">기분</button>
+            <button id="weather">날씨</button>
+        </section>
+
+        <section id="choice-page">
+            <section id="choice-feeling" class="hidden">
+                <h2>당신의 현재 감정을 골라주세요</h2>
+                <form id="feeling-form" class="radio-group">
+                    <label><input type="radio" name="feeling" value="happy">😄 기쁨</label>
+                    <label><input type="radio" name="feeling" value="sad">😢 슬픔</label>
+                    <label><input type="radio" name="feeling" value="tired">😮‍ 지침</label>
+                    <label><input type="radio" name="feeling" value="angry">😠 화남</label>
+                    <label><input type="radio" name="feeling" value="sleepy">😴 졸림</label>
+                </form>
+                <button id="submit-feeling">확인</button>
+            </section>
+
+            <section id="choice-weather" class="hidden">
+                <h2>오늘의 날씨를 골라주세요</h2>
+                <form id="weather-form" class="radio-group">
+                    <label><input type="radio" name="weather" value="sunny">☀ 맑음</label>
+                    <label><input type="radio" name="weather" value="cloudy">☁ 흐림</label>
+                    <label><input type="radio" name="weather" value="rainy">☂ 비</label>
+                    <label><input type="radio" name="weather" value="thunder">⚡ 천둥번개</label>
+                    <label><input type="radio" name="weather" value="snowy">❄ 눈</label>
+                </form>
+            <button id="submit-weather">확인</button>
+            </section>
+        </section>
+
+
+        <section id="music-info" class="hidden">
+            <h2>이 음악을 추천합니다!</h2>
+            <div class="music-container">
+                <img id="musician" src="" alt="images" />
+                <h3 class="music-title">곡명 </h3>
+                <h4 class="artist">작곡가 </h4>
+                <p>노래</p>
+                <!-- 추가
+                <div id="player-container"></div>
+                -->
+                <a href="#" target="_blank">유튜브에서 바로 듣기</a>
+
+            </div>
+
+            <button id="retry">다시하기</button>
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+        <p>&copy; CSP 2, 2025</p>
+        <h6>Images from
+            <strong>
+                <a href="https://www.wikipedia.org/" target="_blank">Wikipedia.com</a> /
+                <a href="https://www.flaticon.com/free-icon/record-player_396287?term=vinyl+record&page=1&position=22&origin=tag&related_id=396287" target="_blank">favicon</a>
+            </strong>
+        </h6>
+    </footer>
+
+</body>
+</html>
